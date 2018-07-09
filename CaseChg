@@ -1,0 +1,46 @@
+// Program to change lowercase to uppercase and 
+// vice versa and count the number of changes. 
+// It leaves other characters unchanged.
+
+// Written by Olanipekun Akintola
+
+public class CaseChg {
+
+	public static void main(String[] args) 
+		throws java.io.IOException {
+		
+		 char newletter; 
+		 int char_changes = 0;
+		 
+		 // prompt user for input
+		 System.out.println("Enter character or period to stop: ");
+		
+		 do {
+			 newletter =  (char)System.in.read();
+			 
+			 // checks if small letter is entered
+			 if(newletter >= 'a' && newletter <= 'z') {
+			 newletter = (char)(newletter - 32);
+			 System.out.println(newletter);
+			 char_changes++;
+			 }
+			 
+			 // checks if capital letter is entered
+			 else if(newletter >= 'A' && newletter <= 'Z') {
+			 newletter = (char)(newletter + 32);
+			 System.out.println(newletter);
+			 char_changes++;
+			 }
+		 
+			 // the default is for other symbols
+			 else
+			 System.out.println(newletter);
+			 
+			// terminates if period is entered
+		 }while(newletter != '.');
+		 
+		 // displays number of character changes made
+		 System.out.println("Number of changes made to the letter: " + char_changes);
+	}
+
+}
